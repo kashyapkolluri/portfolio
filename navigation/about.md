@@ -104,7 +104,7 @@ Here is what I did at those places
 - 🎓 Currently in my Freshman Year at Del Norte
 
 
-### Culture, Family
+### Culture, Family, and Hobbies
 
 I live for my friends and family, and especially, video games.
 

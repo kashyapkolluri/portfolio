@@ -2,10 +2,17 @@ export class GameExecutor {
   constructor({
     getCode,
     updateStatus,
+<<<<<<< HEAD
     runBtn,
     pauseBtn,
     stopBtn,
     fullscreenBtn,
+=======
+    runButton,
+    pauseButton,
+    stopButton,
+    fullscreenButton,
+>>>>>>> upstream/main
     levelSelect,
     engineVersionSelect,
     getGameContainer,
@@ -16,10 +23,17 @@ export class GameExecutor {
   } = {}) {
     this.getCode = getCode || (() => '');
     this.updateStatus = updateStatus || (() => {});
+<<<<<<< HEAD
     this.runBtn = runBtn;
     this.pauseBtn = pauseBtn;
     this.stopBtn = stopBtn;
     this.fullscreenBtn = fullscreenBtn;
+=======
+    this.runButton = runButton;
+    this.pauseButton = pauseButton;
+    this.stopButton = stopButton;
+    this.fullscreenButton = fullscreenButton;
+>>>>>>> upstream/main
     this.levelSelect = levelSelect;
     this.engineVersionSelect = engineVersionSelect;
     this.getGameContainer = getGameContainer;
@@ -66,10 +80,17 @@ export class GameExecutor {
     }
 
     this.updateStatus('Stopped');
+<<<<<<< HEAD
     if (this.runBtn) this.runBtn.disabled = false;
     if (this.pauseBtn) this.pauseBtn.disabled = true;
     if (this.stopBtn) this.stopBtn.disabled = true;
     if (this.fullscreenBtn) this.fullscreenBtn.disabled = true;
+=======
+    if (this.runButton) this.runButton.disabled = false;
+    if (this.pauseButton) this.pauseButton.disabled = true;
+    if (this.stopButton) this.stopButton.disabled = true;
+    if (this.fullscreenButton) this.fullscreenButton.disabled = true;
+>>>>>>> upstream/main
     if (this.levelSelect) this.levelSelect.disabled = false;
   }
 
@@ -221,6 +242,7 @@ export class GameExecutor {
       }
 
       this.updateStatus('Loading...');
+<<<<<<< HEAD
       if (this.runBtn) this.runBtn.disabled = true;
       if (this.pauseBtn) {
         this.pauseBtn.disabled = false;
@@ -229,6 +251,16 @@ export class GameExecutor {
       }
       if (this.stopBtn) this.stopBtn.disabled = false;
       if (this.fullscreenBtn) this.fullscreenBtn.disabled = false;
+=======
+      if (this.runButton) this.runButton.disabled = true;
+      if (this.pauseButton) {
+        this.pauseButton.disabled = false;
+        this.pauseButton.textContent = '⏸';
+        this.pauseButton.title = 'Pause Game';
+      }
+      if (this.stopButton) this.stopButton.disabled = false;
+      if (this.fullscreenButton) this.fullscreenButton.disabled = false;
+>>>>>>> upstream/main
       if (this.levelSelect) this.levelSelect.disabled = true;
 
       const gameContainer = this.getGameContainer?.();
@@ -237,6 +269,7 @@ export class GameExecutor {
       const selectedVersion = this.engineVersionSelect ? this.engineVersionSelect.value : 'GameEnginev1';
 
       code = code.replace(/GameEnginev1(?:\.1)?/g, selectedVersion);
+<<<<<<< HEAD
       code = code.replace(/from\s+['"]([^'"]+)['"]/g, (match, importPath) => {
         // Keep import-map aliases, relative paths, and explicit schemes untouched.
         if (
@@ -255,6 +288,40 @@ export class GameExecutor {
         }
 
         return `from '${baseUrl}/${importPath}'`;
+=======
+
+      // Blob modules cannot resolve relative specifiers (./, ../) correctly,
+      // so normalize all import specifiers to absolute URLs before execution.
+      const moduleBase = `${baseUrl}/assets/js/${selectedVersion}/`;
+      const normalizeImportPath = (importPath) => {
+        if (/^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(importPath)) {
+          return importPath;
+        }
+
+        if (importPath.startsWith('@')) {
+          return importPath;
+        }
+
+        if (importPath.startsWith('/')) {
+          return `${baseUrl}${importPath}`;
+        }
+
+        if (importPath.startsWith('./') || importPath.startsWith('../')) {
+          return new URL(importPath, moduleBase).href;
+        }
+
+        return `${baseUrl}/${importPath}`;
+      };
+
+      code = code.replace(/from\s+(['"])([^'"]+)\1/g, (match, quote, importPath) => {
+        const normalizedPath = normalizeImportPath(importPath);
+        return `from ${quote}${normalizedPath}${quote}`;
+      });
+
+      code = code.replace(/import\s*\(\s*(['"])([^'"]+)\1\s*\)/g, (match, quote, importPath) => {
+        const normalizedPath = normalizeImportPath(importPath);
+        return `import(${quote}${normalizedPath}${quote})`;
+>>>>>>> upstream/main
       });
 
       const GameModule = await import(baseUrl + '/assets/js/' + selectedVersion + '/essentials/Game.js');
@@ -336,10 +403,17 @@ export class GameExecutor {
     } catch (error) {
       this.updateStatus('Error: ' + error.message);
       console.error('Game error:', error);
+<<<<<<< HEAD
       if (this.runBtn) this.runBtn.disabled = false;
       if (this.pauseBtn) this.pauseBtn.disabled = true;
       if (this.stopBtn) this.stopBtn.disabled = true;
       if (this.fullscreenBtn) this.fullscreenBtn.disabled = true;
+=======
+      if (this.runButton) this.runButton.disabled = false;
+      if (this.pauseButton) this.pauseButton.disabled = true;
+      if (this.stopButton) this.stopButton.disabled = true;
+      if (this.fullscreenButton) this.fullscreenButton.disabled = true;
+>>>>>>> upstream/main
       if (this.levelSelect) this.levelSelect.disabled = false;
 
       if (this.gameStateMonitor) {
@@ -418,14 +492,22 @@ export class GameExecutor {
       controlsContainer.style.flexWrap = 'wrap';
 
       // Clone control buttons
+<<<<<<< HEAD
       const clonedRunBtn = this.runBtn ? this.runBtn.cloneNode(true) : null;
       const clonedPauseBtn = this.pauseBtn ? this.pauseBtn.cloneNode(true) : null;
       const clonedStopBtn = this.stopBtn ? this.stopBtn.cloneNode(true) : null;
       const clonedFullscreenBtn = this.fullscreenBtn ? this.fullscreenBtn.cloneNode(true) : null;
+=======
+      const clonedRunButton = this.runButton ? this.runButton.cloneNode(true) : null;
+      const clonedPauseButton = this.pauseButton ? this.pauseButton.cloneNode(true) : null;
+      const clonedStopButton = this.stopButton ? this.stopButton.cloneNode(true) : null;
+      const clonedFullscreenButton = this.fullscreenButton ? this.fullscreenButton.cloneNode(true) : null;
+>>>>>>> upstream/main
       const clonedEngineSelect = this.engineVersionSelect ? this.engineVersionSelect.cloneNode(true) : null;
       const clonedLevelSelect = this.levelSelect ? this.levelSelect.cloneNode(true) : null;
 
       // Add event listeners to cloned buttons to trigger original buttons
+<<<<<<< HEAD
       if (clonedRunBtn) {
         clonedRunBtn.addEventListener('click', () => this.runBtn?.click());
         controlsContainer.appendChild(clonedRunBtn);
@@ -441,6 +523,23 @@ export class GameExecutor {
       if (clonedFullscreenBtn) {
         clonedFullscreenBtn.addEventListener('click', () => this.fullscreenBtn?.click());
         controlsContainer.appendChild(clonedFullscreenBtn);
+=======
+      if (clonedRunButton) {
+        clonedRunButton.addEventListener('click', () => this.runButton?.click());
+        controlsContainer.appendChild(clonedRunButton);
+      }
+      if (clonedPauseButton) {
+        clonedPauseButton.addEventListener('click', () => this.pauseButton?.click());
+        controlsContainer.appendChild(clonedPauseButton);
+      }
+      if (clonedStopButton) {
+        clonedStopButton.addEventListener('click', () => this.stopButton?.click());
+        controlsContainer.appendChild(clonedStopButton);
+      }
+      if (clonedFullscreenButton) {
+        clonedFullscreenButton.addEventListener('click', () => this.fullscreenButton?.click());
+        controlsContainer.appendChild(clonedFullscreenButton);
+>>>>>>> upstream/main
       }
 
       // Add event listeners to cloned selects to sync with originals
@@ -503,9 +602,15 @@ export class GameExecutor {
       this.configuredCanvasHeight = viewportHeight;
 
       // Update button text
+<<<<<<< HEAD
       if (this.fullscreenBtn) {
         this.fullscreenBtn.textContent = '⛶ Minimize';
         this.fullscreenBtn.title = 'Exit Fullscreen';
+=======
+      if (this.fullscreenButton) {
+        this.fullscreenButton.textContent = '⛶';
+        this.fullscreenButton.title = 'Exit Fullscreen';
+>>>>>>> upstream/main
       }
 
       this.isFullscreen = true;
@@ -541,9 +646,15 @@ export class GameExecutor {
       }
 
       // Update button text
+<<<<<<< HEAD
       if (this.fullscreenBtn) {
         this.fullscreenBtn.textContent = '⛶ Fullscreen';
         this.fullscreenBtn.title = 'Enter Fullscreen';
+=======
+      if (this.fullscreenButton) {
+        this.fullscreenButton.textContent = '⛶';
+        this.fullscreenButton.title = 'Enter Fullscreen';
+>>>>>>> upstream/main
       }
 
       this.isFullscreen = false;

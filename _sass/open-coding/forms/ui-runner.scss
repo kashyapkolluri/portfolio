@@ -32,6 +32,7 @@
     }
   }
 
+<<<<<<< HEAD
   // Additional buttons specific to UI runner - using element classes
   .stopBtn,
   .resetBtn {
@@ -42,4 +43,6 @@
   .stopBtn {
     @extend .danger-button;
   }
+=======
+>>>>>>> upstream/main
 }

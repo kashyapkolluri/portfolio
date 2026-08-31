@@ -58,6 +58,7 @@
     min-width: 120px;
   }
 
+<<<<<<< HEAD
   // Game-specific buttons - using element classes for semantic colors
   .pauseBtn,
   .stopBtn,
@@ -91,6 +92,8 @@
     }
   }
 
+=======
+>>>>>>> upstream/main
   // Game status indicator
   .game-status {
     font-weight: 500;
@@ -104,13 +107,19 @@
   // Compact controls for hide_edit mode (mini-game experiences)
   .compact-controls {
     display: flex;
+<<<<<<< HEAD
     gap: 10px;
+=======
+    flex-wrap: wrap;
+    gap: 8px;
+>>>>>>> upstream/main
     align-items: center;
     padding: 12px;
     background: var(--pref-bg-color);
     border: 1px solid var(--ui-border);
     border-radius: 8px;
     margin-bottom: 10px;
+<<<<<<< HEAD
     
     .runBtn,
     .stopBtn,
@@ -123,6 +132,62 @@
       min-width: 120px;
       flex: 1;
       max-width: 200px;
+=======
+    justify-content: flex-start;
+
+    button,
+    select {
+      margin-left: 0;
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+    
+    .ocs__btn.utility {
+      flex: 0 0 auto;
+    }
+
+    .levelSelect {
+      @include select-control();
+      min-width: 120px;
+      max-width: 200px;
+      height: 36px;
+      font-size: 0.95rem;
+      padding: 0.3rem 0.45rem;
+    }
+
+    .engineVersionSelect {
+      @include select-control();
+      min-width: 110px;
+      max-width: 170px;
+      height: 36px;
+      font-size: 0.95rem;
+      padding: 0.3rem 0.45rem;
+    }
+
+    @media (max-width: 768px) {
+      gap: 0.4rem;
+
+      .ocs__btn.utility {
+        flex: 0 0 auto;
+      }
+
+      .engineVersionSelect,
+      .levelSelect {
+        flex: 1 1 calc(50% - 0.4rem);
+        min-width: 130px;
+        max-width: none;
+        height: 34px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .engineVersionSelect,
+      .levelSelect {
+        flex-basis: calc(50% - 0.3rem);
+        min-width: 0;
+      }
+>>>>>>> upstream/main
     }
   }
 
@@ -160,6 +225,10 @@
 
 .fullscreen-control-header {
   background: rgba(255, 255, 255, 0.1);
+<<<<<<< HEAD
+=======
+  -webkit-backdrop-filter: blur(10px);
+>>>>>>> upstream/main
   backdrop-filter: blur(10px);
   padding: 0.75rem 1.5rem;
   display: flex;
@@ -202,10 +271,19 @@
 
 .fullscreen-controls-container {
   display: flex;
+<<<<<<< HEAD
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
+=======
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  padding-left: 12rem;
+>>>>>>> upstream/main
 
   &.collapsed {
     display: none;
@@ -215,10 +293,24 @@
     background: var(--pref-accent-color);
     border: none;
     color: var(--pref-text-color);
+<<<<<<< HEAD
     padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
+=======
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+>>>>>>> upstream/main
     transition: all 0.3s ease;
 
     &:hover:not(:disabled) {
@@ -256,4 +348,35 @@
       color: var(--pref-text-color);
     }
   }
+<<<<<<< HEAD
+=======
+
+  @media (max-width: 900px) {
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    button,
+    select {
+      flex: 1 1 calc(50% - 0.5rem);
+      min-width: 0;
+    }
+
+    button {
+      min-width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    button,
+    select {
+      flex-basis: 100%;
+    }
+  }
+>>>>>>> upstream/main
 }

@@ -5,7 +5,11 @@ hide: true
 show_reading_time: false
 ---
 
+<<<<<<< HEAD
 Hi! My name is Kashyap Kolluri
+=======
+Hi! My name is [Your Full Name]
+>>>>>>> upstream/main
 
 ### Development Environment
 

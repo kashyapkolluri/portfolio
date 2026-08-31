@@ -105,6 +105,14 @@ jobs:
 
           echo "baseurl: \"$BASEURL\"" > _config.override.yml
 
+<<<<<<< HEAD
+=======
+      - name: Generate dynamic SASS imports
+        run: |
+          source venv/bin/activate
+          python scripts/generate_sass_imports.py
+
+>>>>>>> upstream/main
       - name: Build with Jekyll
         run: |
           bundle exec jekyll build --config _config.yml,_config.override.yml

@@ -48,13 +48,22 @@
   }
 
   // Emphasized run button
+<<<<<<< HEAD
   .runBtn {
+=======
+  .ocs__btn.utility.run {
+>>>>>>> upstream/main
     @include emphasized-icon-button;
   }
 
   // Common icon buttons
+<<<<<<< HEAD
   .copyBtn,
   .clearBtn {
+=======
+  .ocs__btn.utility.copy,
+  .ocs__btn.utility.clear {
+>>>>>>> upstream/main
     @include icon-button(38px, 0);
   }
 }

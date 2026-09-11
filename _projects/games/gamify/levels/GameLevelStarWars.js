@@ -11,7 +11,7 @@ class GameLevelStarWars {
     let path = gameEnv.path;
 
     // Background data
-    const image_src_atat = path + "/images/projects/gamify/atat_background.png"; // be sure to include the path
+    const image_src_atat = path + "/images/projects/gamify/space_background.png"; // be sure to include the path
     const image__data_atat = {
         id: 'AT-AT-Background',
         src: image_src_atat,

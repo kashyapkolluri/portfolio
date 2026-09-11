@@ -31,7 +31,7 @@ class GameLevelEnd {
     const image_data_parallax = {
         name: 'parallax_background',
         id: 'parallax-background',
-        greeting: "A mysterious parallax effect in the background.",
+        greeting: "Welcome to a mysterious parallel universe.",
         src: image_src_parallax,
         pixels: {height: 1140, width: 2460},
         position: { x: 0, y: 0 },

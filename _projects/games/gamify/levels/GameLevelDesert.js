@@ -6,21 +6,18 @@ import Npc from '@assets/js/GameEnginev1.1/essentials/Npc.js';
 import DialogueSystem from '@assets/js/GameEnginev1.1/essentials/DialogueSystem.js';
 import AiNpc from '@assets/js/GameEnginev1.1/essentials/AiNpc.js';
 import Clicker from '@assets/js/GameEnginev1.1/essentials/Clicker.js';
-<<<<<<< HEAD
+
 import GameLevelMeteorBlaster from '@assets/js/GameEnginev1.1/GameLevelMeteorBlaster.js';
 import Coin from '@assets/js/GameEnginev1.1/Coin.js';
 import GameLevelStarWars from './GameLevelStarWars.js';
 import GameLevelEnd from './GameLevelEnd.js';
-=======
-import Coin from '@assets/js/GameEnginev1.1/Coin.js';
-import GameLevelStarWars from './GameLevelStarWars.js';
->>>>>>> upstream/main
+
 import PlatformerMini from './PlatformerMini.js';
 
 // Import PlatformerMini (game-in-game)
 
 class GameLevelDesert {
-<<<<<<< HEAD
+
  constructor(gameEnv) {
    let width = gameEnv.innerWidth;
    let height = gameEnv.innerHeight;
@@ -959,12 +956,13 @@ class GameLevelDesert {
 
 
 }
-=======
+
+/* Duplicate constructor block retained below for reference; it is not part of the class. */
+/*
     constructor(gameEnv) {
         let width = gameEnv.innerWidth;
         let height = gameEnv.innerHeight;
         let path = gameEnv.path;
-
 
         // Background data
         const image_src_desert = path + "/images/projects/gamify/desert.png"; // be sure to include the path
@@ -1678,7 +1676,8 @@ class GameLevelDesert {
     } // End of GameLevelDesert constructor
 
 } // End of GameLevelDesert class
->>>>>>> upstream/main
+*/
+
 
 
 export default GameLevelDesert;

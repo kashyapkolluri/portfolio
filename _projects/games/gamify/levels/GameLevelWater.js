@@ -24,8 +24,8 @@ class GameLevelWater {
         pixels: {height: 597, width: 340}
     };
 
-    // Player Data for Octopus
-    const sprite_src_dolphin = path + "/images/projects/gamify/water/dolphin.png"; // be sure to include the path
+    // Player data for Dolphin
+    const sprite_src_dolphin = path + "/images/projects/gamify/dolphin.png"; // be sure to include the path
     const DOLPHIN_SCALE_FACTOR = 5;
     const sprite_data_dolphin = {
         id: 'Dolphin',
@@ -178,7 +178,7 @@ const sprite_src_puffer = path + "/images/projects/gamify/water/puffer.png";
 
     this.classes = [      
       { class: GameEnvBackground, data: image_data_water },
-      { class: Player, data: sprite_data_octopus },
+      { class: Player, data: sprite_data_dolphin },
       { class: Npc, data: sprite_data_nomad },
       { class: Npc, data: sprite_data_nezuko },
       { class: Shark, data: sprite_data_shark },

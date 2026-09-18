@@ -1,6 +1,7 @@
 HOST ?= localhost
 PORT ?= 4200
-REPO_NAME ? = portfolio
+REPO_NAME ?= portfolio
+#added ny repo name
 LOG_FILE = /tmp/jekyll$(PORT).log
 PYTHON := venv/bin/python3
 
